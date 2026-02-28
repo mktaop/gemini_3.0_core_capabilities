@@ -104,6 +104,9 @@ def main():
                     file=uploaded_file,
                     config=dict(mime_type=mime_type)
                 )
+                while sample_doc.state.name == "PROCESSING":
+                    time.sleep(2)
+                    sample_doc = client.files.get(name=sample_doc.name)
                 message_parts.append(
                     types.Part.from_uri(
                         file_uri=sample_doc.uri, 
