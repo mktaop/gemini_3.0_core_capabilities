@@ -160,7 +160,7 @@ def main():
                     st.write(response.candidates[0].content.parts[0].text)
                 
                 if audio_or_not == "Yes":
-                    with st.spinner("🔊 Generating voice..."):
+                    with st.spinner("🔊 Generating voice response..."):
                         audio_response = client.models.generate_content(
                             model="gemini-2.5-flash-preview-tts",
                             contents=[f"Please read this aloud in the language the response is in: {response.text}"],
