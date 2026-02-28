@@ -1,7 +1,6 @@
 #pip install google-genai st-copy streamlit
 #make sure you have at least version 1.52 for google-genai and 1.50 for streamlit
 import streamlit as st, os, wave, io, base64, warnings
-from streamlit_option_menu import option_menu
 from google import genai
 from google.genai import types
 from st_copy import copy_button
@@ -69,7 +68,7 @@ def audio_choice():
 def main():
     """Main Code."""
   
-    st.header(":blue[:material/search: Explore Gemini's & chat_input capabilities]", anchor=False,)
+    st.header(":blue[:material/search: Explore Gemini 3's capabilities]", anchor=False,)
     
     if get_clear():
         st.session_state.chat_history = []
